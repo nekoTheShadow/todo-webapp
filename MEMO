@@ -1,0 +1,10 @@
+ docker run --rm -d \
+   -p 5432:5432 \
+   -e POSTGRES_USER=testuser \
+   -e POSTGRES_PASSWORD=passw0rd \
+   -e POSTGRES_DB=testdb \
+   postgres:latest
+
+DATABASE_URL="host=localhost port=5432 user=testuser password=passw0rd dbname=testdb sslmode=disable" go run .
+
+http://localhost:8989/
